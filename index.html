@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Santhosh Kumar E – AI / ML Developer</title>
+<meta name="description" content="Portfolio of Santhosh Kumar E, a Python-focused AI/ML developer working on computer vision with YOLOv8 and OpenCV.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --road:#E7ECF0; --panel:#F6F8FA; --ink:#15212B; --muted:#4D5C69;
+  --line:#C5CFD8; --mark:#F0B90B; --mark-ink:#15212B; --box:#0B7A75;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --road:#141C23; --panel:#1B252E; --ink:#E8EEF3; --muted:#9DB0BF;
+    --line:#2D3B47; --mark:#F0B90B; --mark-ink:#15212B; --box:#3FD0C7;
+    color-scheme: dark;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--road);color:var(--ink);
+  font:400 1.0625rem/1.65 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--box);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--mark);color:var(--mark-ink);padding:.5rem 1rem;z-index:9}
+
+/* nav */
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0;flex-wrap:wrap;gap:.75rem}
+nav .name{font:700 1.1rem "Bricolage Grotesque",sans-serif;text-decoration:none}
+nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+nav ul a{text-decoration:none;color:var(--muted)}
+nav ul a:hover{color:var(--ink);text-decoration:underline;text-decoration-color:var(--mark);text-decoration-thickness:3px;text-underline-offset:6px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:3rem;align-items:center;padding:3rem 0 4.5rem}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:700;letter-spacing:-.02em}
+.hero .role{margin:1.25rem 0 0;font-size:1.2rem;color:var(--muted);max-width:30rem}
+.cta{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2rem}
+.btn{display:inline-block;padding:.75rem 1.25rem;border-radius:4px;text-decoration:none;font-weight:500;border:2px solid var(--ink)}
+.btn.primary{background:var(--mark);color:var(--mark-ink);border-color:var(--mark)}
+.btn:hover{transform:translateY(-2px)}
+.frame{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:.75rem}
+.frame svg{display:block;width:100%;height:auto}
+.frame figcaption{font-size:.85rem;color:var(--muted);padding:.6rem .25rem 0}
+.scan{animation:scan 7s ease-in-out infinite alternate}
+@keyframes scan{from{transform:translateX(0)}to{transform:translateX(26px)}}
+@media (prefers-reduced-motion:reduce){.scan{animation:none}html{scroll-behavior:auto}.btn:hover{transform:none}}
+
+/* sections */
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:clamp(1.8rem,3.5vw,2.4rem);margin-bottom:2rem}
+.about{max-width:42rem}
+.about p{margin:0 0 1rem}
+
+.project{display:grid;grid-template-columns:1fr 1.2fr;gap:2.5rem;padding:2rem 0;border-top:1px dashed var(--line)}
+.project:first-of-type{border-top:0;padding-top:0}
+.project h3{font-size:1.6rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 0;padding:0;list-style:none}
+.tags li{font-size:.85rem;padding:.15rem .6rem;border:1px solid var(--line);border-radius:99px;background:var(--panel)}
+.project ol{margin:0;padding-left:1.25rem}
+.project ol li{margin-bottom:.5rem}
+.project ol li::marker{color:var(--box);font-weight:500}
+.repo{display:inline-block;margin-top:1rem;font-weight:500}
+
+.job{display:grid;grid-template-columns:13rem 1fr;gap:2rem;padding:1.5rem 0;border-top:1px dashed var(--line)}
+.job:first-of-type{border-top:0;padding-top:0}
+.job h3{font-size:1.2rem}
+.job .org{color:var(--muted);margin:.25rem 0 0}
+.job ul{margin:0;padding-left:1.1rem}
+.job li{margin-bottom:.4rem}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.skills h3{font-size:1.05rem;margin-bottom:.6rem}
+.skills ul{margin:0;padding:0;list-style:none}
+.skills li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem}
+.edu h3{font-size:1.05rem;margin-bottom:.4rem}
+.edu p{margin:0 0 .35rem}
+
+.contact p{max-width:34rem;margin:0 0 1.5rem}
+.links{display:flex;gap:.75rem;flex-wrap:wrap}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+
+@media (max-width:820px){
+  .hero,.project,.job{grid-template-columns:1fr;gap:1.5rem}
+  .hero{padding-top:1.5rem}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="name" href="#top">Santhosh Kumar E</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <div>
+      <h1>I teach computers to read the road.</h1>
+      <p class="role">Santhosh Kumar E: Python-focused AI/ML developer in Chennai, building computer vision systems with YOLOv8 and OpenCV.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <figure class="frame" style="margin:0">
+      <svg viewBox="0 0 600 420" role="img" aria-label="Illustration of a road video frame with lane lines and two detected vehicles with bounding boxes">
+        <rect width="600" height="420" fill="var(--road)"/>
+        <polygon points="250,70 350,70 590,420 10,420" fill="var(--panel)" stroke="var(--line)" stroke-width="2"/>
+        <line x1="250" y1="70" x2="10" y2="420" stroke="var(--mark)" stroke-width="5"/>
+        <line x1="350" y1="70" x2="590" y2="420" stroke="var(--mark)" stroke-width="5"/>
+        <g stroke="var(--muted)" stroke-width="4" stroke-dasharray="26 22">
+          <line x1="300" y1="70" x2="300" y2="420"/>
+        </g>
+        <!-- trip lines -->
+        <g stroke="var(--box)" stroke-width="2" stroke-dasharray="6 5">
+          <line x1="150" y1="190" x2="450" y2="190"/>
+          <line x1="95" y1="330" x2="505" y2="330"/>
+        </g>
+        <text x="458" y="186" font-size="12" fill="var(--box)" font-family="IBM Plex Sans,sans-serif">line A</text>
+        <text x="512" y="326" font-size="12" fill="var(--box)" font-family="IBM Plex Sans,sans-serif">line B</text>
+        <!-- vehicle 1 -->
+        <g class="scan">
+          <rect x="318" y="196" width="60" height="44" rx="5" fill="var(--ink)" opacity=".85"/>
+          <rect x="310" y="168" width="136" height="76" fill="none" stroke="var(--box)" stroke-width="3" transform="translate(-24 0)"/>
+          <rect x="286" y="148" width="136" height="20" fill="var(--box)"/>
+          <text x="294" y="163" font-size="13" fill="var(--panel)" font-family="IBM Plex Sans,sans-serif" font-weight="500">car  ID 4  62 km/h</text>
+        </g>
+        <!-- vehicle 2 -->
+        <rect x="190" y="300" width="96" height="62" rx="6" fill="var(--ink)" opacity=".85"/>
+        <rect x="176" y="284" width="124" height="94" fill="none" stroke="var(--box)" stroke-width="3"/>
+        <rect x="176" y="262" width="124" height="22" fill="var(--box)"/>
+        <text x="184" y="278" font-size="13" fill="var(--panel)" font-family="IBM Plex Sans,sans-serif" font-weight="500">car  ID 7  48 km/h</text>
+      </svg>
+      <figcaption>Sketch of a detection frame: lane edges, tracked IDs and speed trip-lines.</figcaption>
+    </figure>
+  </header>
+</div>
+
+<main id="main">
+  <section id="about"><div class="wrap">
+    <h2>About</h2>
+    <div class="about">
+      <p>I hold a B.Tech in Artificial Intelligence and Data Science from Paavai College of Engineering, Namakkal (2021–2025, CGPA 8.04). Through three internships and two computer vision projects I have worked on the full path from raw data to a working model.</p>
+      <p>I enjoy turning video into measurements: finding lanes, tracking vehicles and estimating their speed. I am also exploring Generative AI and aim to build more Python-based AI applications.</p>
+    </div>
+  </div></section>
+
+  <section id="projects"><div class="wrap">
+    <h2>Projects</h2>
+
+    <article class="project">
+      <div>
+        <h3>Vehicle Speed Detection System</h3>
+        <p>Detects vehicles in video, gives each one an ID and estimates its speed to flag over-speeding.</p>
+        <ul class="tags"><li>Python</li><li>YOLOv8</li><li>SORT</li><li>OpenCV</li></ul>
+        <a class="repo" href="https://github.com/YOUR-USERNAME/vehicle-speed-detection">View code on GitHub</a>
+      </div>
+      <ol>
+        <li>YOLOv8 identifies vehicles in each video frame.</li>
+        <li>SORT tracking assigns unique IDs so each vehicle is followed across frames.</li>
+        <li>Pixel-to-meter calibration and distance-time calculations give the speed.</li>
+        <li>OpenCV handles video processing and the over-speeding logic.</li>
+      </ol>
+    </article>
+
+    <article class="project">
+      <div>
+        <h3>Road Curve Lane Detection</h3>
+        <p>Finds lane boundaries in road video using classical computer vision, for driver-assistance use.</p>
+        <ul class="tags"><li>Python</li><li>OpenCV</li><li>Canny edge</li><li>Hough Transform</li></ul>
+        <a class="repo" href="https://github.com/YOUR-USERNAME/lane-detection">View code on GitHub</a>
+      </div>
+      <ol>
+        <li>Convert frames to grayscale and apply Gaussian blur.</li>
+        <li>Detect edges with the Canny algorithm.</li>
+        <li>Mask the region of interest to keep only the road ahead.</li>
+        <li>Use the Hough Transform to identify lane boundaries.</li>
+      </ol>
+    </article>
+  </div></section>
+
+  <section id="experience"><div class="wrap">
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div><h3>Machine Learning Intern</h3><p class="org">Cognifyz Technologies</p></div>
+      <ul>
+        <li>Worked on restaurant rating prediction and recommendation projects.</li>
+        <li>Explored cuisine classification and location-based analysis.</li>
+        <li>Built hands-on experience with Python and machine learning techniques.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div><h3>Data Science Intern</h3><p class="org">Gradtwin Services (OPC) Private Limited</p></div>
+      <ul>
+        <li>Worked on a Fake News Detection project using NLP techniques.</li>
+        <li>Preprocessed and cleaned text data to prepare datasets for machine learning.</li>
+        <li>Explored text classification to distinguish real from fake news.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div><h3>Python for Data Science</h3><p class="org">Techvolt Softwares</p></div>
+      <ul>
+        <li>Learned Python fundamentals: variables, data types, functions and core programming concepts.</li>
+        <li>Performed data preprocessing and cleaning with Python.</li>
+        <li>Worked on a Heart Disease Prediction project using machine learning.</li>
+      </ul>
+    </div>
+  </div></section>
+
+  <section id="skills"><div class="wrap">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Languages and core</h3><ul><li>Python</li><li>OOPS</li><li>File handling</li></ul></div>
+      <div><h3>Machine learning</h3><ul><li>Machine Learning</li><li>Deep Learning</li><li>Data preprocessing</li><li>NumPy, Pandas, Scikit-learn</li></ul></div>
+      <div><h3>Computer vision</h3><ul><li>OpenCV</li><li>YOLOv8</li><li>Object tracking (SORT)</li></ul></div>
+      <div><h3>Working style</h3><ul><li>Problem solving</li><li>Team collaboration</li><li>Leadership</li><li>Discipline</li></ul></div>
+    </div>
+  </div></section>
+
+  <section id="education"><div class="wrap">
+    <h2>Education and certifications</h2>
+    <div class="edu">
+      <div>
+        <h3>B.Tech, Artificial Intelligence and Data Science</h3>
+        <p>Paavai College of Engineering, Namakkal</p>
+        <p>2021–2025 · CGPA 8.04</p>
+      </div>
+      <div>
+        <h3>School</h3>
+        <p>12th (2021): 84%</p>
+        <p>10th (2019): 85%</p>
+        <p>S.D. Eaden Mat. Hr. Sec. School, Vadalur</p>
+      </div>
+      <div>
+        <h3>Certifications</h3>
+        <p>Artificial Intelligence Programmer</p>
+        <p>Python for Data Science</p>
+        <p>Machine Learning</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="contact" class="contact"><div class="wrap">
+    <h2>Let's talk</h2>
+    <p>I am looking for AI/ML and computer vision roles. The fastest way to reach me is email.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:santhoshkumare2210@gmail.com">santhoshkumare2210@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/ske2210">LinkedIn</a>
+      <a class="btn" href="https://github.com/YOUR-USERNAME">GitHub</a>
+    </div>
+  </div></section>
+</main>
+
+<footer><div class="wrap">© <span id="yr">2026</span> Santhosh Kumar E · Chennai, India</div></footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
